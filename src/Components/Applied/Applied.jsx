@@ -17,7 +17,7 @@ const Applied = () => {
 
 let jobApplied=[]
 for( const id of stortedJobs){
-    const job =jobs.filter(job => job.id === id)
+    const job =jobs.find(job => job.id === id)
     if(job){
         jobApplied.push(job)
     }
@@ -46,7 +46,7 @@ for( const id of stortedJobs){
             
            
             {
-             displayJObs.map(job => <li key={job.id}> <span className='text-white'> {job.company_name}  {job.remote_or_onsite}</span> </li> )   
+             displayJObs.map(job => <AppliedJob key={job.id} job={job}></AppliedJob> )   
             }
         </div>
     );
